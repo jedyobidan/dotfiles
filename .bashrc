@@ -15,3 +15,5 @@ alias now='date + "%T"'
 alias ping='ping -c 4'
 alias rm='rm -I --preserve-root'
 
+# Fix colors for Mac OS/iTerm
+export LSCOLORS="ExGxBxDxCxEgEdxbxgxcxd"
