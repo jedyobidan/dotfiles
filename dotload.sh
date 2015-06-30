@@ -3,5 +3,5 @@ cp -v .bashrc ~
 cp -v .vimrc ~
 cp -v .git-prompt.sh ~
 cp -v .tmux.conf ~
-source  ~/.bashrc
+.  ~/.bashrc
 echo "Sourced .bashrc"
