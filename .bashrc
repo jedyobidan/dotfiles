@@ -8,7 +8,7 @@ function __prompt() {
     if [ $EXIT != 0 ]; then
         status="\e[31m[${EXIT}] "
     fi
-    PS1="${status}\e[94m\u\e[39m@\e[92m\h\e[39m:\e[93m\w\e[96m\$(__git_ps1)\e[0m \$ "
+    PS1="${status}\e[34;1m\u\e[39m@\e[32;1m\h\e[39m:\e[33;1m\w\e[36;1m\$(__git_ps1)\e[0m \$ "
 }
 export PROMPT_COMMAND=__prompt
 
