@@ -1,7 +1,4 @@
 #!/usr/bin/env bash
-cp -v .bashrc ~
-cp -v .vimrc ~
-cp -v .git-prompt.sh ~
-cp -v .tmux.conf ~
+cp -v .??* ~
 .  ~/.bashrc
 echo "Sourced .bashrc"
