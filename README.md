@@ -1,7 +1,7 @@
 # dotfiles
 My preferred dotfiles for vim, bash, tmux, etc.
 
-# How to add to your environment
+## How to add to your environment
 This repo provides a script that copies all the dotfiles into your 
 home directory; here's how to run the script.
 
