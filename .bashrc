@@ -14,7 +14,7 @@ function __prompt() {
 export PROMPT_COMMAND=__prompt
 
 # Aliases
-alias ls='ls -Gp'
+ls --color=auto &> /dev/null && alias ls='ls --color=auto -pF' ||
 alias ll='ls -la'
 alias ..='cd ..'
 alias grep='grep --color=auto'
