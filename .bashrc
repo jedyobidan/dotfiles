@@ -4,7 +4,7 @@ source ~/.ansi-colors.sh
 
 # PS1
 function __prompt() {
-    local EXIT="$?"
+    local EXIT="${1-$?}"
     local status=""
     if [ $EXIT != 0 ]; then
         status="${fg_Red}[${EXIT}] "
@@ -14,7 +14,7 @@ function __prompt() {
 export PROMPT_COMMAND=__prompt
 
 # Aliases
-alias ls='ls -Gp'
+ls --color=auto &> /dev/null && alias ls='ls --color=auto -p' ||
 alias ll='ls -la'
 alias ..='cd ..'
 alias grep='grep --color=auto'
