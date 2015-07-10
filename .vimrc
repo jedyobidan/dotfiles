@@ -26,7 +26,7 @@ syntax on
 "------------------------------------------------------------
 " Appearrance
 set t_Co=256
-color torte
+color pablo
 set cursorline
 highlight Cursorline cterm=bold ctermbg=234
  
