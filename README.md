@@ -10,13 +10,13 @@ home directory; here's how to run the script.
 - Run `source dotload.sh`
 
 Note that this does not affect your .bash_profile script; if your 
-.bash_login does not source .bashrc, any changes to .bashrc 
+.bash_profile does not source .bashrc, any changes to .bashrc 
 will be reverted on your next login. To fix this, simply add the
 following lines to your .bash_profile (if it does not exist, create it
 and add these lines).
 
 ```
 if [ -f ~/.bashrc ]; then
-    . ~/.bashrc
+    source ~/.bashrc
 fi
 ```
