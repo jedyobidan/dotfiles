@@ -27,3 +27,10 @@ alias rm='rm -I --preserve-root'
 
 # Fix colors for Mac OS/iTerm
 export LSCOLORS="ExGxBxDxCxEgEdxbxgxcxd"
+
+# Run extensions
+if [ -d ~/bashrc.d ]; then
+    for script in ~/bashrc.d/*.sh; do
+        source $script
+    done
+fi
