@@ -21,7 +21,7 @@ alias grep='grep --color=auto'
 alias egrep='egrep --color=auto'
 alias fgrep='fgrep --color=auto'
 alias mkdir='mkdir -pv'
-alias now='date + "%T"'
+alias now='date +"%T"'
 alias ping='ping -c 4'
 alias rm='rm -I --preserve-root'
 
