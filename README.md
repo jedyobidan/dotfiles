@@ -41,3 +41,12 @@ function __super_prompt(){
     __prompt $EXIT_CODE
 }
 ```
+
+Another note on overriding PROMPT_COMMAND: if you don't want to completely change 
+PS1, there is a helper function called __prompt_suffix that takes one argument; 
+this argument will be appended to the prompt right before the final $.
+
+Finally, feel free to use the colors in .ansi-colors.sh in customizing your PS1.
+All colors are prefixed fg or bg for foreground/background with an optional b
+for bold versions. The shade is specified by the first three letters of the color
+name, i.e. `$fgb_Red` indicates foreground bold red.
