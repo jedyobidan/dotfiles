@@ -1,6 +1,7 @@
 # Load some scripts
 source ~/.git-prompt.sh
 source ~/.ansi-colors.sh
+source ~/.grep.sh
 
 # PS1
 function __prompt() {
@@ -22,9 +23,7 @@ function __prompt_suffix() {
 ls --color=auto &> /dev/null && alias ls='ls --color=auto -pF' ||
 alias ll='ls -la'
 alias ..='cd ..'
-alias grep='grep --color=auto'
-alias egrep='egrep --color=auto'
-alias fgrep='fgrep --color=auto'
+alias grep='jgrep'
 alias mkdir='mkdir -pv'
 alias now='date +"%T"'
 alias ping='ping -c 4'
