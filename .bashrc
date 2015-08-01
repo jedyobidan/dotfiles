@@ -28,6 +28,7 @@ alias mkdir='mkdir -pv'
 alias now='date +"%T"'
 alias ping='ping -c 4'
 alias rm='rm -I --preserve-root'
+alias vi='vim'
 
 # Fix colors for Mac OS/iTerm
 export LSCOLORS="ExGxBxDxCxEgEdxbxgxcxd"
