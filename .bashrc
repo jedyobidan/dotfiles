@@ -1,10 +1,11 @@
 # Load some scripts
 source ~/.git-prompt.sh
 source ~/.ansi-colors.sh
+source ~/.grep.sh
 
 # PS1
 function __prompt() {
-    local EXIT="${1-$?}"
+    local EXIT="${1:-$?}"
     local status=""
     if [ $EXIT != 0 ]; then
         status="${fg_Red}[${EXIT}] "
@@ -13,17 +14,28 @@ function __prompt() {
 }
 export PROMPT_COMMAND=__prompt
 
+function __prompt_suffix() {
+    local suffix="$1"
+    PS1="${PS1%\$ }${suffix} ${color_reset}\$ "
+}
+
 # Aliases
-ls --color=auto &> /dev/null && alias ls='ls --color=auto -p' ||
+ls --color=auto &> /dev/null && alias ls='ls --color=auto -pF' ||
 alias ll='ls -la'
 alias ..='cd ..'
-alias grep='grep --color=auto'
-alias egrep='egrep --color=auto'
-alias fgrep='fgrep --color=auto'
+alias grep='jgrep'
 alias mkdir='mkdir -pv'
-alias now='date + "%T"'
+alias now='date +"%T"'
 alias ping='ping -c 4'
 alias rm='rm -I --preserve-root'
+alias vi='vim'
 
 # Fix colors for Mac OS/iTerm
 export LSCOLORS="ExGxBxDxCxEgEdxbxgxcxd"
+
+# Run extensions
+if [ -d ~/bashrc.d ]; then
+    for script in ~/bashrc.d/*.sh; do
+        source $script
+    done
+fi

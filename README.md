@@ -1,7 +1,7 @@
-## dotfiles ##
+# dotfiles #
 My preferred dotfiles for vim, bash, tmux, etc.
 
-### How to add to your environment ###
+## How to add to your environment ##
 This repo provides a script that copies all the dotfiles into your 
 home directory; here's how to run the script.
 
@@ -20,3 +20,33 @@ if [ -f ~/.bashrc ]; then
     source ~/.bashrc
 fi
 ```
+
+## Extensions ##
+If you need to modify .bashrc for different environments, instead of
+changing lines in the provided .bashrc, you can also add new bash scripts
+in ~/bashrc.d, which will be sourced by .bashrc before it completes,
+allowing you to override some of the behavior of .bashrc
+
+In addition, if you need to change PROMPT_COMMAND, be sure to call `__prompt`
+in your new prompt command then edit PS1 as necessary. If you call `__prompt`
+after another command in PROMPT_COMMAND you will need to save `$?` in a variable
+before at the beginning of PROMPT_COMMAND and call `__prompt` with that as an
+argument. Example:
+
+```
+function __super_prompt(){
+    EXIT_CODE = "$?"
+    ls -A
+    git status
+    __prompt $EXIT_CODE
+}
+```
+
+Another note on overriding PROMPT_COMMAND: if you don't want to completely change 
+PS1, there is a helper function called __prompt_suffix that takes one argument; 
+this argument will be appended to the prompt right before the final $.
+
+Finally, feel free to use the colors in .ansi-colors.sh in customizing your PS1.
+All colors are prefixed fg or bg for foreground/background with an optional b
+for bold versions. The shade is specified by the first three letters of the color
+name, i.e. `$fgb_Red` indicates foreground bold red.
