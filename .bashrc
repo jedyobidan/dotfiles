@@ -8,9 +8,16 @@ function __prompt() {
     local EXIT="${1:-$?}"
     local status=""
     if [ $EXIT != 0 ]; then
-        status="${fg_Red}[${EXIT}] "
+        status="\[${fg_Red}\][${EXIT}] "
     fi
-    PS1="${status}${fgb_Blu}\u${color_reset}@${fgb_Gre}\h${color_reset}:${fgb_Yel}\w${fgb_Cya}\$(__git_ps1)${color_reset} \$ "
+    local user="\[${fgb_Blu}\]\u"
+    local at="\[${color_reset}\]@"
+    local host="\[${fgb_Gre}\]\h"
+    local colon="\[${color_reset}\]:"
+    local path="\[${fgb_Yel}\]\w"
+    local git="\[${fgb_Cya}\]\$(__git_ps1)"
+    local sigil="\[${color_reset}\]\$"
+    PS1="${status}${user}${at}${host}${colon}${path}${git} ${sigil} "
 }
 export PROMPT_COMMAND=__prompt
 
@@ -30,6 +37,7 @@ alias ping='ping -c 4'
 alias rm='rm -I --preserve-root'
 alias vi='vim'
 alias home='cd ~'
+alias less='less -FX'
 
 # Fix colors for Mac OS/iTerm
 export LSCOLORS="ExGxBxDxCxEgEdxbxgxcxd"
