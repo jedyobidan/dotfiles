@@ -27,10 +27,10 @@ function __prompt_suffix() {
 }
 
 # Aliases
-ls --color=auto &> /dev/null && alias ls='ls --color=auto -pF' ||
+ls --color=auto &> /dev/null && alias ls='ls --color=auto -pF'
 alias ll='ls -la'
 alias ..='cd ..'
-alias grep='jgrep'
+# alias grep='jgrep'
 alias mkdir='mkdir -pv'
 alias now='date +"%T"'
 alias ping='ping -c 4'
