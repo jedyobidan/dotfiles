@@ -43,7 +43,7 @@ alias less='less -FX'
 export LSCOLORS="ExGxBxDxCxEgEdxbxgxcxd"
 
 # Run extensions
-if [ -d ~/bashrc.d ]; then
+if [ -d ~/.bashrc.d ]; then
     for script in ~/bashrc.d/*.sh; do
         source $script
     done
