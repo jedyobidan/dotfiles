@@ -8,7 +8,7 @@ function __prompt() {
     local EXIT="${1:-$?}"
     local status=""
     if [ $EXIT != 0 ]; then
-        status="\[${fg_Red}\][${EXIT}] "
+        status="\[${fg_Red}\][${EXIT}]\n"
     fi
     local user="\[${fgb_Blu}\]\u"
     local at="\[${color_reset}\]@"
