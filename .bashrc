@@ -23,7 +23,7 @@ export PROMPT_COMMAND=__prompt
 
 function __prompt_suffix() {
     local suffix="$1"
-    PS1="${PS1%\$ }${suffix} ${color_reset}\$ "
+    PS1="${PS1%\$ }${suffix} \[${color_reset}\]\$ "
 }
 
 # Aliases
