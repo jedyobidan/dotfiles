@@ -1,3 +1,3 @@
 function jgrep(){
-    grep -rn "$1" . --color
+    grep -rn "$@" . --color
 }
