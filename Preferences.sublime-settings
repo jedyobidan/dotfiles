@@ -1,0 +1,35 @@
+{
+	"caret_style": "phase",
+	"color_scheme": "Packages/Colorsublime - Themes/monokai_fresh.tmTheme",
+	"font_size": 14,
+	"highlight_line": true,
+	"ignored_packages":
+	[
+		"Vintage"
+	],
+	"line_padding_bottom": 1,
+	"overlay_scroll_bars": "enabled",
+	"rulers":
+	[
+		80,
+		100
+	],
+	"theme": "Boxy Tomorrow.sublime-theme",
+	"theme_accent_green": true,
+	"theme_bar": true,
+	"theme_button_inverted": true,
+	"theme_dirty_materialized": true,
+	"theme_find_panel_close_hidden": true,
+	"theme_icons_atomized": true,
+	"theme_quick_panel_item_selected_colored": true,
+	"theme_scrollbar_rounded": true,
+	"theme_sidebar_disclosure": true,
+	"theme_sidebar_indent_top_level_disabled": true,
+	"theme_sidebar_size_xs": true,
+	"theme_size_sm": true,
+	"theme_statusbar_font_xs": true,
+	"theme_statusbar_size_xs": true,
+	"theme_tab_arrows_hidden": true,
+	"theme_tab_selected_prelined": true,
+	"theme_tab_separator": true
+}
