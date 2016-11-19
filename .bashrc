@@ -34,11 +34,11 @@ alias ..='cd ..'
 alias mkdir='mkdir -pv'
 alias now='date +"%T"'
 alias ping='ping -c 4'
-alias rm='rm -I --preserve-root'
+# alias rm='rm -I --preserve-root'
 alias vi='vim'
 alias home='cd ~'
 alias less='less -FX'
-
+alias resource='source ~/.bashrc'
 # Fix colors for Mac OS/iTerm
 export LSCOLORS="ExGxBxDxCxEgEdxbxgxcxd"
 
