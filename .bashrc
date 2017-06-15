@@ -39,8 +39,12 @@ alias vi='vim'
 alias home='cd ~'
 alias less='less -FX'
 alias resource='source ~/.bashrc'
+alias tmux='tmux -CC'
+
 # Fix colors for Mac OS/iTerm
 export LSCOLORS="ExGxBxDxCxEgEdxbxgxcxd"
+export EDITOR='vim'
+
 
 # Run extensions
 if [ -d ~/.bashrc.d ]; then
