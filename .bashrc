@@ -47,7 +47,7 @@ export EDITOR='vim'
 
 
 # Run extensions
-if [ -d ~/.bashrc.d ]; then
+if [ "$(ls -A ~/.bashrc.d/*.sh)" ]; then
     for script in ~/.bashrc.d/*.sh; do
         source $script
     done
