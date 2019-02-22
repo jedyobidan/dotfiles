@@ -3,6 +3,9 @@ source ~/.git-prompt.sh
 source ~/.ansi-colors.sh
 source ~/.grep.sh
 
+# Flags
+use_git=true
+
 # PS1
 function __prompt() {
     local EXIT="${1:-$?}"
@@ -15,11 +18,15 @@ function __prompt() {
     local host="\[${fgb_Gre}\]\h"
     local colon="\[${color_reset}\]:"
     local path="\[${fgb_Yel}\]\w"
-    local git="\[${fgb_Cya}\]\$(__git_ps1)"
+    if [ $use_git = true ]
+    then
+        local git="\[${fgb_Cya}\]\$(__git_ps1)"
+    fi
     local sigil="\[${color_reset}\]\$"
     PS1="${status}${user}${at}${host}${colon}${path}${git} ${sigil} "
 }
 export PROMPT_COMMAND=__prompt
+export PROMPT_DIRTRIM=2
 
 function __prompt_suffix() {
     local suffix="$1"
