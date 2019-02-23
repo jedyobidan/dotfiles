@@ -27,7 +27,7 @@ changing lines in the provided .bashrc, you can also add new bash scripts
 in ~/bashrc.d, which will be sourced by .bashrc before it completes,
 allowing you to override some of the behavior of .bashrc
 
-## VCS ##
+### VCS ###
 The default files only provide information about any git repos present in 
 the prompt. If you'd like VCS info from a different system (SVN, Mercurial,
 etc.), then simply create a function that echoes the desired text in an 
