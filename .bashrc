@@ -3,8 +3,8 @@ source ~/.git-prompt.sh
 source ~/.ansi-colors.sh
 source ~/.grep.sh
 
-# Flags
-use_git=true
+declare -a __vcs_ps1
+__vcs_ps1=('__git_ps1')
 
 # PS1
 function __prompt() {
@@ -17,20 +17,22 @@ function __prompt() {
     local at="\[${color_reset}\]@"
     local host="\[${fgb_Gre}\]\h"
     local colon="\[${color_reset}\]:"
-    local path="\[${fgb_Yel}\]\w"
-    if [ $use_git = true ]
-    then
-        local git="\[${fgb_Cya}\]\$(__git_ps1)"
-    fi
+    local path="\[${fgb_Yel}\]\W"
+    local vcs="\[${fgb_Cya}\]$(__vcs)"
     local sigil="\[${color_reset}\]\$"
-    PS1="${status}${user}${at}${host}${colon}${path}${git} ${sigil} "
+    PS1="${status}${user}${at}${host}${colon}${path}${vcs} ${sigil} "
 }
 export PROMPT_COMMAND=__prompt
-export PROMPT_DIRTRIM=2
 
 function __prompt_suffix() {
     local suffix="$1"
     PS1="${PS1%\$ }${suffix} \[${color_reset}\]\$ "
+}
+
+function __vcs() {
+    for i in "${!__vcs_ps1[@]}"; do
+        ${__vcs_ps1[$i]}
+    done
 }
 
 # Aliases

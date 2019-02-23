@@ -7,7 +7,6 @@ cp $BASE/.ansi-colors.sh $HOME
 cp $BASE/.bashrc $HOME
 cp $BASE/.git-prompt.sh $HOME
 cp $BASE/.grep.sh $HOME
-cp $BASE/.tmux.conf $HOME
 cp $BASE/.vimrc $HOME
 
 # bashrc extensions
