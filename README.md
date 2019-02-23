@@ -27,26 +27,15 @@ changing lines in the provided .bashrc, you can also add new bash scripts
 in ~/bashrc.d, which will be sourced by .bashrc before it completes,
 allowing you to override some of the behavior of .bashrc
 
-In addition, if you need to change PROMPT_COMMAND, be sure to call `__prompt`
-in your new prompt command then edit PS1 as necessary. If you call `__prompt`
-after another command in PROMPT_COMMAND you will need to save `$?` in a variable
-before at the beginning of PROMPT_COMMAND and call `__prompt` with that as an
-argument. Example:
+## VCS ##
+The default files only provide information about any git repos present in 
+the prompt. If you'd like VCS info from a different system (SVN, Mercurial,
+etc.), then simply create a function that echoes the desired text in an 
+extension file and add the function name to the `__vcs_ps1` array.
 
 ```
-function __super_prompt(){
-    EXIT_CODE = "$?"
-    ls -A
-    git status
-    __prompt $EXIT_CODE
+function __awesome_vcs_prompt(){
+    echo -n " (repo_info)"
 }
+__vcs_ps1+=('__awesome_vcs_prompt')
 ```
-
-Another note on overriding PROMPT_COMMAND: if you don't want to completely change 
-PS1, there is a helper function called __prompt_suffix that takes one argument; 
-this argument will be appended to the prompt right before the final $.
-
-Finally, feel free to use the colors in .ansi-colors.sh in customizing your PS1.
-All colors are prefixed fg or bg for foreground/background with an optional b
-for bold versions. The shade is specified by the first three letters of the color
-name, i.e. `$fgb_Red` indicates foreground bold red.
