@@ -39,19 +39,13 @@ function __vcs() {
 ls --color=auto &> /dev/null && alias ls='ls --color=auto -pF'
 alias ll='ls -la'
 alias ..='cd ..'
-# alias grep='jgrep'
 alias mkdir='mkdir -pv'
 alias now='date +"%T"'
 alias ping='ping -c 4'
-# alias rm='rm -I --preserve-root'
 alias vi='vim'
 alias home='cd ~'
 alias less='less -FX'
 alias resource='source ~/.bashrc'
-alias tmux='tmux -CC'
-
-# Fix colors for Mac OS/iTerm
-export LSCOLORS="ExGxBxDxCxEgEdxbxgxcxd"
 export EDITOR='vim'
 
 
