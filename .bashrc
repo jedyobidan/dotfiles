@@ -48,6 +48,7 @@ alias less='less -FX'
 alias resource='source ~/.bashrc'
 export EDITOR='vim'
 
+export PATH="$PATH;~/bin"
 
 # Run extensions
 if [ "$(ls -A ~/.bashrc.d/*.sh)" ]; then
