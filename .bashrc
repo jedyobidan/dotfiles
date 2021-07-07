@@ -1,3 +1,9 @@
+# If not running interactively, don't do anything
+case $- in
+    *i*) ;;
+      *) return;;
+esac
+
 # Load some scripts
 source ~/.git-prompt.sh
 source ~/.ansi-colors.sh
@@ -48,7 +54,7 @@ alias less='less -FX'
 alias resource='source ~/.bashrc'
 export EDITOR='vim'
 
-export PATH="$PATH;~/bin"
+export PATH="$PATH:$HOME/bin"
 
 # Run extensions
 if [ "$(ls -A ~/.bashrc.d/*.sh)" ]; then
